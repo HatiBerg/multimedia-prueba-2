@@ -1,8 +1,6 @@
-<?php
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,48 +8,50 @@
     <title>Página 1</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 </head>
-<body>
-    <div class="container text-center" style="background-color:#c7c7c7;">
 
+<body class="bg-secondary bg-opacity-25">
+    <header class="container justify-content-center mt-3">
         <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid text-center">
+            <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto">
-                        <div class="navbar-item">
-                            <a class="navbar-brand">Menú de Navegación:</a>
-                        </div>
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <a class="navbar-brand" href="#">Menú de Navegación:</a>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Ingresar Persona</a>
+                            <a class="nav-link" href="pagina1.php">Ingresar Persona</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Lista Personas</a>
+                            <a class="nav-link" href="pagina2.php">Lista Personas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Estadísticas</a>
+                            <a class="nav-link" href="pagina4.php">Estadísticas</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+    </header>
 
-        <div class="row">
-            <div class="col-8">
+    <main class="container justify-content-center my-5 text-center">
+        <div class="d-flex">
+            <div class="col-8 bg-light border-end border-5">
                 <h1>hola</h1>
             </div>
-            <div class="col-4 ms-auto">
-                <h1>hola</h1>
-            </div>
-            <div class="w-100"></div>
-            <div class="col">
+            <div class="col-4 bg-light border-start border-5">
                 <h1>hola</h1>
             </div>
         </div>
+    </main>
 
+    <footer class="container justify-content-center text-center text-lg-start">
+        <div class="text-center p-4" style="background-color: white;">
+            Tecnología Multimedia - CIF 6459 - Domingo 06/11/2022 - Esteban Ponce - Sebastian Torres
+        </div>
+    </footer>
 
-    </div>
     <script src="js/bootstrap.js"></script>
 </body>
+
 </html>
