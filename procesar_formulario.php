@@ -10,9 +10,9 @@ $cuidadRes = $_POST['ciudadRes'];
 $imagen = $_FILES['foto'];
 $estado = 1; // estado de subida del formulario | Estados posibles ==> 0 = Error / 1 = Subir formulario
 
-$nombre_archivo = $_FILES['foto']['name'];
+$nombre_archivo = $imagen['name'];
 $target_dir = "img/perfil/";
-$target_file = $target_dir . $nombre_archivo . '.jpg';
+$target_file = $target_dir . $nombre_archivo;
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 $check = getimagesize($imagen["tmp_name"]);
 
@@ -41,8 +41,8 @@ if ($estado == 1) {
 
     $conexion = mysqli_connect($host, $user, $pass, $db);
 
-    $consulta = "INSERT INTO formulario (nombres, apellidos, rut, fecha_nac, nacionalidad, genero, cuidad_res, url_foto) 
-            VALUES('$nombres', '$apellidos', '$rut', '$fechaNac', '$nacionalidad', '$genero', '$cuidadRes', '$imagen')";
+    $consulta = "INSERT INTO formulario (nombres, apellidos, rut, fecha_nac, nacionalidad, genero, ciudad_res, url_foto) 
+            VALUES('$nombres', '$apellidos', '$rut', '$fechaNac', '$nacionalidad', '$genero', '$cuidadRes', '$target_file')";
 
     if (mysqli_query($conexion, $consulta)) {
         echo "El formulario se a subido con exito";
