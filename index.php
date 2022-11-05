@@ -37,7 +37,8 @@
     <main class="container-fluid justify-content-center my-5 text-center">
         <div class="d-flex bg-light">
             <div class="col-12 bg-light">
-                <h1>Main</h1>
+            <img src="img/perfil/comCuant.webp" class="rounded float-center img-thumbnail" style="width:500px; height:500px">
+                <h1></h1>
             </div>
         </div>
     </main>
