@@ -34,13 +34,119 @@
         </nav>
     </header>
 
-    <main class="container-fluid justify-content-center my-5 text-center">
+    <main class="container-fluid justify-content-center my-5">
         <div class="d-flex">
             <div class="col-8 bg-light border-end border-5">
-                <h1>hola</h1>
+                <h1>
+                    <div class="text-center">Formulario</div>
+                        <form class="mx-5 needs-validation">
+                            <div class="mb-3">
+                                <label for="Nombre" class="form-label fs-4">Nombres</label>
+                                <input type="text" class="form-control" id="nombres" aria-describedby="AyudaNombre" required>
+                                <div class="valid-feedback">
+                                    ok
+                                </div>
+                                <div class="invalid-feedback">
+                                    Es necesario ingresar su nombre
+                                </div>
+                            <div id="AyudaNombre" class="form-text"></div>
+
+                            <div class="mb-3">
+                                <label for="Apellidos" class="form-label fs-4">Apellidos</label>
+                                <input type="text" class="form-control" id="apellidos" aria-describedby="AyudaApellido" required>
+                                <div class="valid-feedback">
+                                    ok
+                                </div>
+                                <div class="invalid-feedback">
+                                    Es necesario ingresar su apellido
+                                </div>
+                            <div id="AyudaApellido" class="form-text"></div>
+
+                            <div class="mb-3">
+                                <label for="Rut" class="form-label fs-4">RUT</label>
+                                <input type="text" class="form-control" id="rut" aria-describedby="AyudaRut" required>
+                                <div class="valid-feedback">
+                                ok
+                                </div>
+                                <div class="invalid-feedback">
+                                    Es necesario ingresar su RUT
+                                </div>
+                            <div id="AyudaRut" class="form-text"></div>
+
+                            <div class="mb-3">
+                                <label for="FechaDeNacimiento" class="form-label fs-4">Fecha de nacimiento</label>
+                                <input type="date" class="form-control" id="FechaDeNacimiento" aria-describedby="AyudaNacim" required>
+                                <div class="valid-feedback">
+                                ok
+                                </div>
+                                <div class="invalid-feedback">
+                                    Es necesario ingresar su fecha de nacimiento
+                                </div>
+                            <div id="AyudaNacim" class="form-text"></div>
+
+                            <div class="mt-3">
+                                <label for="Nacionalidad" class="form-label fs-4">Nacionalidad</label>
+                                <select class="form-select" id="nacionalidad" aria-label="Default select example" required>
+                                    <option selected disabled>Seleccione nacionalidad</option>
+                                    <option value="1">Chilena</option>
+                                    <option value="2">Canadience</option>
+                                    <option value="3">Uruguaya</option>
+                                </select>
+                                <div class="valid-feedback">
+                                ok
+                                </div>
+                                <div class="invalid-feedback">
+                                    Es necesario ingresar su nacionalidad
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <label for="Genero" class="form-label fs-4">Genero</label>
+                                <select class="form-select" id="genero" aria-label="Default select example" required>
+                                    <option selected disabled>Seleccione genero</option>
+                                    <option value="1">Hombre</option>
+                                    <option value="2">Mujer</option>
+                                    <option value="3">Otros</option>
+                                </select>
+                                <div class="valid-feedback">
+                                ok
+                                </div>
+                                <div class="invalid-feedback">
+                                    Es necesario ingresar su genero
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <label for="CiudadRes" class="form-label fs-4">Ciudad de residencia</label>
+                                <input type="text" class="form-control" id="CiudadRes" required>
+                                <div class="valid-feedback">
+                                ok
+                                </div>
+                                <div class="invalid-feedback">
+                                    Es necesario ingresar su cuidad de residencia
+                                </div>
+                            <div id="AyudaCiudad" class="form-text"></div>
+
+                            <div class="my-3">
+                                <label for="formFile" class="form-label fs-4">Subir foto</label>
+                                <input class="form-control" type="file" id="foto" required>
+                                <div class="valid-feedback">
+                                ok
+                                </div>
+                                <div class="invalid-feedback">
+                                    Es necesario ingresar su foto de perfil
+                                </div>
+                            </div>
+                            
+                            <button type="Enviar" class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div>
+                </h1>
             </div>
             <div class="col-4 bg-light border-start border-5">
-                <h1>hola</h1>
+                <h1>
+                    hola
+                </h1>
             </div>
         </div>
     </main>
