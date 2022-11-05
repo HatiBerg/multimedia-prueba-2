@@ -10,7 +10,7 @@
 </head>
 
 <body class="bg-secondary bg-opacity-25">
-    <header class="container justify-content-center mt-3">
+    <header class="container-fluid justify-content-center mt-3">
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -34,13 +34,27 @@
         </nav>
     </header>
 
-    <main class="container justify-content-center my-5 text-center">
+    <main class="container-fluid justify-content-center my-5 text-center">
         <div class="d-flex bg-light">
+            <div class="col-12 bg-light">
+                <?php
+                $host = "localhost";
+                $user = "root";
+                $pass = "";
+                $db = "bd_prueba_2";
 
+                $conexion = mysqli_connect($host, $user, $pass, $db);
+                $consulta = "SELECT * FROM formulario";
+                $resultado = mysqli_query($conexion, $consulta);
+
+                while ($mostrar = mysqli_fetch_array($resultado))
+                ?>
+                <img src="img/perfil/Hatiderp.png" class="rounded float-start">
+            </div>
         </div>
     </main>
 
-    <footer class="container justify-content-center text-center text-lg-start">
+    <footer class="container-fluid justify-content-center text-center text-lg-start">
         <div class="text-center p-4" style="background-color: white;">
             Tecnología Multimedia - CIF 6459 - Domingo 06/11/2022 - Esteban Ponce - Sebastian Torres
         </div>
@@ -48,5 +62,4 @@
 
     <script src="js/bootstrap.js"></script>
 </body>
-
 </html>
