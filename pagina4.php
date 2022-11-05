@@ -10,7 +10,8 @@
 </head>
 
 <body class="bg-secondary bg-opacity-25">
-    <header class="container justify-content-center mt-3">
+
+    <header class="container-fluid justify-content-center mt-3">
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -34,19 +35,20 @@
         </nav>
     </header>
 
-    <main class="container justify-content-center my-5 text-center">
+    <main class="container-fluid justify-content-center my-5 text-center">
         <div class="d-flex">
             <div class="col-12 bg-light mb-5">
                 <h1>hola</h1>
             </div>
-
+        </div>
+        <div class="d-flex">
             <div class="col-12 bg-light">
                 <h1>hola</h1>
             </div>
         </div>
     </main>
 
-    <footer class="container justify-content-center text-center text-lg-start">
+    <footer class="container-fluid justify-content-center">
         <div class="text-center p-4" style="background-color: white;">
             Tecnología Multimedia - CIF 6459 - Domingo 06/11/2022 - Esteban Ponce - Sebastian Torres
         </div>
