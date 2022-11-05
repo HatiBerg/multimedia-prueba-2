@@ -49,11 +49,20 @@
 
                 while ($mostrar = mysqli_fetch_array($resultado))
                 ?>
-                <img src="img/perfil/Hatiderp.png" class="rounded float-start">
+                <img src="img/perfil/Hatiderp.png" class="rounded float-start img-thumbnail" style="width:200px; height:200px">
+                
+                <div class="col-4 bg-light border-start border-5">
+                <h4>
+                    Datos
+                </h4>
+                
+                <div class="d-flex flex-row mt-5">
+                <td><button type="button" class="btn btn-danger">Generar PDF</button></td>
+                </div>
             </div>
         </div>
     </main>
-
+   
     <footer class="container-fluid justify-content-center text-center text-lg-start">
         <div class="text-center p-4" style="background-color: white;">
             Tecnología Multimedia - CIF 6459 - Domingo 06/11/2022 - Esteban Ponce - Sebastian Torres
