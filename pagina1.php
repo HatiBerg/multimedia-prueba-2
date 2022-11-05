@@ -37,7 +37,7 @@
     <main class="container-fluid justify-content-center my-5">
         <div class="d-flex">
             <div class="col-8 bg-light border-end border-5">
-                <form class="mx-5 mt-4 needs-validation novalidate" action="procesar_formulario.php" method="POST" enctype="multipart/form-data">
+                <form class="mx-5 mt-4 needs-validation novalidate" action="<?php htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" enctype="multipart/form-data">
                     <div class="fs-1 mb-4 text-center">Formulario</div>
                     <div class="row mb-4">
                         <label for="nombre" class="col-2 col-form-label">Nombres</label>
@@ -99,7 +99,7 @@
                         </div>
                     </div>
                     <div class="d-grid gap-2 mb-4">
-                        <button type="submit" class="btn btn-primary btn-lg">Enviar formulario</button>
+                        <button type="submit" name="submitForm" class="btn btn-primary btn-lg">Enviar formulario</button>
                     </div>
                 </form>
             </div>
@@ -110,6 +110,64 @@
                 </h1>
             </div>
         </div>
+        <?php
+        if (isset($_POST['submitForm'])) {
+            $nombres = $_POST['nombre'];
+            $apellidos = $_POST['apellidos'];
+            $rut = $_POST['rut'];
+            $fechaNac = $_POST['fechaNac'];
+            $nacionalidad = $_POST['nacionalidad'];
+            $genero = $_POST['genero'];
+            $cuidadRes = $_POST['ciudadRes'];
+            $imagen = $_FILES['foto'];
+            $estado = 1; // estado de subida del formulario | Estados posibles ==> 0 = Error / 1 = Subir formulario
+
+            $nombre_archivo = $imagen['name'];
+            $target_dir = "img/perfil/";
+            $target_file = $target_dir . $nombre_archivo;
+            $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+            $check = getimagesize($imagen["tmp_name"]);
+
+            //Verifica que sea una imagen
+            if ($check == false)
+                $estado = 0;
+
+            //Verificar que solo sean archivos .jpg .png .jpng
+            if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+                $estado = 0;
+            }
+
+            //Verifica el tamaño máximo de la imagen sea 1MB (1mb = 1048576 bytes)
+            if ($imagen["size"] > 1048576) {
+                $estado = 0;
+            }
+
+            //Estado de subida del archivo
+            if ($estado == 1) {
+                move_uploaded_file($imagen["tmp_name"], $target_file);
+
+                $host = "localhost";
+                $user = "root";
+                $pass = "";
+                $db = "bd_prueba_2";
+
+                $conexion = mysqli_connect($host, $user, $pass, $db);
+
+                $consulta = "INSERT INTO formulario (nombres, apellidos, rut, fecha_nac, nacionalidad, genero, ciudad_res, url_foto) 
+            VALUES('$nombres', '$apellidos', '$rut', '$fechaNac', '$nacionalidad', '$genero', '$cuidadRes', '$target_file')";
+
+                if (mysqli_query($conexion, $consulta)) {
+                    echo "El formulario se a subido con exito";
+                    echo "<br>";
+                } else {
+                    echo "Error al subir el formulario";
+                    echo "<br>";
+                }
+            } else {
+                echo "Error al subir el formulario";
+            }
+        }
+        ?>
     </main>
 
     <footer class="container-fluid justify-content-center text-center text-lg-start">
