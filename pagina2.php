@@ -10,7 +10,7 @@
 </head>
 
 <body class="bg-secondary bg-opacity-25">
-    <header class="container justify-content-center mt-3">
+    <header class="container-fluid justify-content-center mt-3">
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -34,13 +34,47 @@
         </nav>
     </header>
 
-    <main class="container justify-content-center my-5 text-center">
-        <div class="d-flex bg-light">
+    <main class="container-fluid justify-content-center my-5 text-center">
+        <div class="d-flex">
+            <div class="col-12 bg-light">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre Completo</th>
+                            <th scope="col">RUT</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <?php
+                    $host = "localhost";
+                    $user = "root";
+                    $pass = "";
+                    $db = "bd_prueba_2";
 
+                    $conexion = mysqli_connect($host, $user, $pass, $db);
+                    $consulta = "SELECT * FROM formulario";
+                    $resultado = mysqli_query($conexion, $consulta);
+
+                    while ($mostrar = mysqli_fetch_array($resultado)) {
+                    ?>
+                        <tbody>
+                            <tr>
+                                <td><?php echo $mostrar['nombres'].' '.$mostrar['apellidos'] ?></td>
+                                <td><?php echo $mostrar['rut'] ?></td>
+                                <td><button type="button" class="btn btn-info">Ver perfil</button></td>
+                                <td><button type="button" class="btn btn-danger">Generar PDF</button></td>
+                            </tr>
+                        </tbody>
+                    <?php
+                    }
+                    ?>
+                </table>
+            </div>
         </div>
     </main>
 
-    <footer class="container justify-content-center text-center text-lg-start">
+    <footer class="container-fluid justify-content-center text-center text-lg-start">
         <div class="text-center p-4" style="background-color: white;">
             Tecnología Multimedia - CIF 6459 - Domingo 06/11/2022 - Esteban Ponce - Sebastian Torres
         </div>
