@@ -1,63 +1,54 @@
-<!--Crear un sitio web que permita mediante un formulario ingresar los datos de una persona a la base de datos, 
-se debe poder ver todas las personas registradas en una sola tabla, además debe permitir ver el perfil de cada
-persona y con esa información generar un documento de pasaporte en formato en PDF. Debe haber una página de 
-estadísticas que indique algunas estadísticas. Detalle en imágenes adjuntas.
-
-La página debe realizarse con bootstrap como librería de diseño CSS.
-
-El formulario de ingreso debe contener los siguientes campos:
-Nombres
-Apellidos
-Rut
-Fecha de nacimiento
-Nacionalidad (chilena, canadiense y uruguaya) (debe desplegarse con un select)
-Genero
-Ciudad residencia
-Foto
-Al generar el pasaporte en PDF no es necesario utilizar Bootstrap, es probable que no funcione bien, utilice CSS puro.
-La nacionalidad debe ser mostrada de dos formas, en forma de texto con el resto de datos y como una imágen, 
-que debe cambiar dependiendo de la nacionalidad elegida.-->
-<?php
-?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://localhost:82/multimedia-prueba-2/bootstrap/css/bootstrap.min.css">
-    <title>Document</title>
+    <title>Página 3</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 </head>
-<body>
-    <main>
-    <form action="insertarDb.php" method="post" enctype="multipart/form-data">
-            <label for="Nombres">Nombres </label>
-        <input type="text" name="Nombres" id="Nombres">
-        <br><br>
-        <label for="Apellidos">Apellidos </label>
-        <input type="text" name="Apellidos" id="Apellidos" required>
-        <br><br>
-        <label for="Rut">Rut </label>
-        <input type="text" name="Rut" id="Rut" required>
-        <br><br>
-        <label for="FechaDeNacimiento">Fecha de nacimiento </label>
-        <input type="text" name="FechaDeNacimiento" id="FechaDeNacimiento" required>
-        <br><br>
-        <label for="Nacionalidad">Nacionalidad </label>
-        <input type="text" name="Nacionalidad" id="Nacionalidad" required>
-        <br><br>
-        <label for="Genero">Genero </label>
-        <input type="text" name="Genero" id="Genero" required>
-        <br><br>
-        <label for="CiudadDeResidencia">Ciudad de recidencia </label>
-        <input type="text" name="CiudadDeResidencia" id="CiudadDeResidencia" required>
-        <br><br>
-        <label>Foto</label>
-        <input type="file" name="fileToUpload" id="fileToUpload" required>
-        <br><br>
-        <input type="submit" value="enviar fomulario">
-        <br></br>
-            </form>
+
+<body class="bg-secondary bg-opacity-25">
+    <header class="container-fluid justify-content-center mt-3">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <a class="navbar-brand" href="#">Menú de Navegación:</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pagina1.php">Ingresar Persona</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pagina2.php">Lista Personas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pagina4.php">Estadísticas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-fluid justify-content-center my-5 text-center">
+        <div class="d-flex bg-light">
+            <div class="col-12 bg-light">
+                <h1>Main</h1>
+            </div>
+        </div>
     </main>
+
+    <footer class="container-fluid justify-content-center text-center text-lg-start">
+        <div class="text-center p-4" style="background-color: white;">
+            Tecnología Multimedia - CIF 6459 - Domingo 06/11/2022 - Esteban Ponce - Sebastian Torres
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.js"></script>
 </body>
+
 </html>

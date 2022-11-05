@@ -18,7 +18,7 @@
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <a class="navbar-brand" href="#">Menú de Navegación:</a>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                            <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="pagina1.php">Ingresar Persona</a>
