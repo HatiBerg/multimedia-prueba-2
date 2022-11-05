@@ -17,7 +17,7 @@
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <a class="navbar-brand" href="#">Menú de Navegación:</a>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                            <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="pagina1.php">Ingresar Persona</a>
@@ -42,60 +42,60 @@
                     <div class="row mb-4">
                         <label for="nombre" class="col-2 col-form-label">Nombres</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" id="nombre" placeholder="Escriba su nombre" required>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba su nombre" required>
                         </div>
                     </div>
                     <div class="row mb-4">
                         <label for="apellidos" class="col-2 col-form-label">Apellidos</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" id="apellidos" placeholder="Escriba sus apellidos" required>
+                            <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Escriba sus apellidos" required>
                         </div>
                     </div>
                     <div class="row mb-4">
                         <label for="rut" class="col-2 col-form-label">RUT</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" id="rut" placeholder="Escriba su RUT" required>
+                            <input type="text" class="form-control" id="rut" name="rut" placeholder="Ejemplo: 12345678-9 (La K debe estar en mayúsculas)" pattern="\d{3,9}-[\d|K]{1}" required>
                         </div>
                     </div>
                     <div class="w-100"></div>
                     <div class="row mb-4">
                         <label for="fechaNac" class="col-2 col-form-label">Fecha de nacimiento</label>
                         <div class="col-10">
-                            <input type="date" class="form-control" id="fechaNac" required>
+                            <input type="date" class="form-control" id="fechaNac" name="fechaNac" required>
                         </div>
                     </div>
                     <div class="row mb-4">
                         <label for="nacionalidad" class="col-2 col-form-label">Nacionalidad</label>
                         <div class="col-10">
-                            <select class="form-select" id="nacionalidad" required>
+                            <select class="form-select" id="nacionalidad" name="nacionalidad" required>
                                 <option selected disabled value="">Seleccione nacionalidad</option>
-                                <option value="1">Chilena</option>
-                                <option value="2">Canadience</option>
-                                <option value="3">Uruguaya</option>
+                                <option value="Chilena">Chilena</option>
+                                <option value="Canadience">Canadience</option>
+                                <option value="Uruguaya">Uruguaya</option>
                             </select>
                         </div>
                     </div>
                     <div class="row mb-4">
                         <label for="genero" class="col-2 col-form-label">genero</label>
                         <div class="col-10">
-                            <select class="form-select" id="genero" required>
+                            <select class="form-select" id="genero" name="genero" required>
                                 <option selected disabled value="">Seleccione genero</option>
-                                <option value="1">Hombre</option>
-                                <option value="2">Mujer</option>
-                                <option value="3">Otros</option>
+                                <option value="Hombre">Hombre</option>
+                                <option value="Mujer">Mujer</option>
+                                <option value="Otros">Otros</option>
                             </select>
                         </div>
                     </div>
                     <div class="row mb-4">
                         <label for="ciudadRes" class="col-2 col-form-label">Ciudad de residencia</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" id="ciudadRes" placeholder="Escriba su ciudad de residencia" required>
+                            <input type="text" class="form-control" id="ciudadRes" name="ciudadRes" placeholder="Escriba su ciudad de residencia" required>
                         </div>
                     </div>
                     <div class="row mb-4">
                         <label for="foto" class="col-2 form-label">Subir foto</label>
                         <div class="col-10">
-                            <input class="form-control" type="file" id="foto" required>
+                            <input class="form-control" type="file" id="foto" name="foto" required>
                         </div>
                     </div>
                     <div class="d-grid gap-2 mb-4">
@@ -106,7 +106,7 @@
 
             <div class="col-4 bg-light border-start border-5">
                 <h1>
-                    hola
+
                 </h1>
             </div>
         </div>
@@ -144,85 +144,3 @@
 </body>
 
 </html>
-<!--
-<h1>
-                    <div class="text-center">Formulario</div>
-                        <form class="mx-5 needs-validation">
-                            <div class="mb-3">
-                                <label for="Nombre" class="form-label fs-4">Nombres</label>
-                                <input type="text" class="form-control" id="nombres" aria-describedby="AyudaNombre" required>
-                                <div class="invalid-feedback">
-                                    Es necesario ingresar su nombre
-                                </div>
-                            <div id="AyudaNombre" class="form-text"></div>
-
-                            <div class="mb-3">
-                                <label for="Apellidos" class="form-label fs-4">Apellidos</label>
-                                <input type="text" class="form-control" id="apellidos" aria-describedby="AyudaApellido" required>
-                                <div class="invalid-feedback">
-                                    Es necesario ingresar su apellido
-                                </div>
-                            <div id="AyudaApellido" class="form-text"></div>
-
-                            <div class="mb-3">
-                                <label for="Rut" class="form-label fs-4">RUT</label>
-                                <input type="text" class="form-control" id="rut" aria-describedby="AyudaRut" required>
-                                <div class="invalid-feedback">
-                                    Es necesario ingresar su RUT
-                                </div>
-                            <div id="AyudaRut" class="form-text"></div>
-
-                            <div class="mb-3">
-                                <label for="FechaDeNacimiento" class="form-label fs-4">Fecha de nacimiento</label>
-                                <input type="date" class="form-control" id="FechaDeNacimiento" aria-describedby="AyudaNacim" required>
-                                <div class="invalid-feedback">
-                                    Es necesario ingresar su fecha de nacimiento
-                                </div>
-                            <div id="AyudaNacim" class="form-text"></div>
-
-                            <div class="mt-3">
-                                <label for="Nacionalidad" class="form-label fs-4">Nacionalidad</label>
-                                <select class="form-select" id="nacionalidad" required>
-                                    <option selected disabled value="">Seleccione nacionalidad</option>
-                                    <option value="">Chilena</option>
-                                    <option value="">Canadience</option>
-                                    <option value="">Uruguaya</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Es necesario ingresar su nacionalidad
-                                </div>
-                            </div>
-
-                            <div class="mt-3">
-                                <label for="Genero" class="form-label fs-4">Genero</label>
-                                <select class="form-select" id="genero" required>
-                                    <option selected disabled>Seleccione genero</option>
-                                    <option value="1">Hombre</option>
-                                    <option value="2">Mujer</option>
-                                    <option value="3">Otros</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Es necesario ingresar su genero
-                                </div>
-                            </div>
-
-                            <div class="mt-3">
-                                <label for="CiudadRes" class="form-label fs-4">Ciudad de residencia</label>
-                                <input type="text" class="form-control" id="CiudadRes" required>
-                                <div class="invalid-feedback">
-                                    Es necesario ingresar su cuidad de residencia
-                                </div>
-                            <div id="AyudaCiudad" class="form-text"></div>
-
-                            <div class="my-3">
-                                <label for="formFile" class="form-label fs-4">Subir foto</label>
-                                <input class="form-control" type="file" id="foto" required>
-                                <div class="invalid-feedback">
-                                    Es necesario ingresar su foto de perfil
-                                </div>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary">Enviar</button>
-                        </form>
-                    </div>
-                </h1>-->
