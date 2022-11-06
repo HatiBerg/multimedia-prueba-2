@@ -1,3 +1,19 @@
+<?php
+ob_start();
+
+$nombres = "Esteban Adolfo";
+$apellidos = "Ponce Lira";
+$rut = "12345678-9";
+$fechaNac = "08-06-1990";
+$nacionalidad = "Canadiense";
+$genero = "Hombre";
+$cuidadRes = "Valparaiso";
+
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db = "bd_prueba_2";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,17 +59,53 @@
                 $pass = "";
                 $db = "bd_prueba_2";
 
+
                 $conexion = mysqli_connect($host, $user, $pass, $db);
-                $consulta = "SELECT * FROM formulario";
+                $id = $_GET ['id'];
+                $consulta = "SELECT * FROM formulario WHERE id = '$id'" ;
                 $resultado = mysqli_query($conexion, $consulta);
 
-                while ($mostrar = mysqli_fetch_array($resultado))
+                 $mostrar = mysqli_fetch_array($resultado);
+                    echo "<img src='".$mostrar['url_foto']."' class='rounded float-start img-thumbnail' style='width:200px; height:200px'>";
+                
+
+
+
                 ?>
-                <img src="img/perfil/Hatiderp.png" class="rounded float-start img-thumbnail" style="width:200px; height:200px">
+                
                 
                 <div class="col-4 bg-light border-start border-5">
+                <div id="wrapper">
+        <div id="main">
+            <div id="containerTop">
+                <div id="rowTop1">
+                    <div id="foto">
+                        <!--<img src="/img/perfil/Hatiderp.png" id="imgPerfil">-->
+                    </div>
+                    <div id="info">
+                        <div id="infoTop">
+                            <?php
+                            echo "<b>".$mostrar['nombres']."</b>";
+                            ?>
+                        </div>
+                        <div id="infoBottom">
+                            <?php
+                            echo "Rut: " .$mostrar['rut'];
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div id="rowTop2">
+                    <?php
+                    echo "Datos varios:";
+                    echo "<br>● <b>Fecha de Nacimiento: </b>" . $mostrar['fecha_nac'];
+                    echo "<br>● <b>Nacionalidad: </b>" . $mostrar['nacionalidad'];
+                    echo "<br>● <b>Genero: </b>" . $mostrar['genero'];
+                    echo "<br>● <b>Ciudad residencia: </b>" . $mostrar['ciudad_res'];
+                    ?>
+                </div>
                 <h4>
-                    Datos
+                    
                 </h4>
                 
                 <div class="d-flex flex-row mt-5">

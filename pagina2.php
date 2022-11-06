@@ -62,7 +62,12 @@
                             <tr>
                                 <td><?php echo $mostrar['nombres'].' '.$mostrar['apellidos'] ?></td>
                                 <td><?php echo $mostrar['rut'] ?></td>
-                                <td><button type="button" class="btn btn-info">Ver perfil</button></td>
+                                <td> 
+                                    <?php echo "<a href ='pagina3.php?id=". $mostrar['id']."'>";?>
+                                    <button type="button" class="btn btn-info">Ver perfil</button>
+                                    <?php echo "</a>";?>
+                                </td>
+                                
                                 <td><button type="button" class="btn btn-danger">Generar PDF</button></td>
                             </tr>
                         </tbody>
