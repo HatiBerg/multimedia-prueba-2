@@ -98,5 +98,4 @@ $contEdad = mysqli_query($conexion, $consultaEdad);
 
     <script src="js/bootstrap.js"></script>
 </body>
-
 </html>
