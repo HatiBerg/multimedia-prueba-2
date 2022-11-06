@@ -5,7 +5,7 @@ $nombres = "Esteban Adolfo";
 $apellidos = "Ponce Lira";
 $rut = "12345678-9";
 $fechaNac = "08-06-1990";
-$nacionalidad = "Canadience";
+$nacionalidad = "Canadiense";
 $genero = "Hombre";
 $cuidadRes = "Valparaiso";
 
@@ -70,7 +70,7 @@ $mostrar = mysqli_fetch_array($resultado)
                     if ($nacionalidad == "Chilena") {
                         echo "<img src='img/banderas/chile.png' id='bandera' width='60px' height='40px'>";
                     }
-                    if ($nacionalidad == "Canadience") {
+                    if ($nacionalidad == "Canadiense") {
                         echo "<img src='img/banderas/canada.png' id='bandera' width='60px' height='40px'>";
                     }
                     if ($nacionalidad == "Uruguaya") {

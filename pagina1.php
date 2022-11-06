@@ -70,7 +70,7 @@
                             <select class="form-select" id="nacionalidad" name="nacionalidad" required>
                                 <option selected disabled value="">Seleccione nacionalidad</option>
                                 <option value="Chilena">Chilena</option>
-                                <option value="Canadience">Canadience</option>
+                                <option value="Canadiense">Canadiense</option>
                                 <option value="Uruguaya">Uruguaya</option>
                             </select>
                         </div>
