@@ -1,3 +1,20 @@
+<?php
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db = "bd_prueba_2";
+
+$conexion = mysqli_connect($host, $user, $pass, $db);
+
+$consultaPais = "SELECT nacionalidad, count(id) AS cantidad FROM formulario GROUP BY nacionalidad";
+$contPais = mysqli_query($conexion, $consultaPais);
+
+$consultaEdad = "SELECT TIMESTAMPDIFF(YEAR,fecha_nac,CURDATE()) AS Edad, count(id) AS cantEdad
+FROM formulario 
+GROUP BY TIMESTAMPDIFF(YEAR,fecha_nac,CURDATE())";
+$contEdad = mysqli_query($conexion, $consultaEdad);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +24,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página 4</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Nacionalidad', 'Cantidad'],
+                <?php
+                while ($row = mysqli_fetch_array($contPais)) {
+                    echo "['" . $row["nacionalidad"] . "', " . $row["cantidad"] . "],";
+                }
+                ?>
+            ]);
+
+            var optionsData = {
+                title: 'Cantidad de personas registradas por país',
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, optionsData);
+        }
+    </script>
 </head>
 
 <body class="bg-secondary bg-opacity-25">
@@ -38,12 +81,11 @@
     <main class="container-fluid justify-content-center my-5 text-center">
         <div class="d-flex">
             <div class="col-12 bg-light mb-5">
-                <h1>hola</h1>
+                <div class="mx-auto" id="piechart" style="width: 900px; height: 500px;"></div>
             </div>
         </div>
         <div class="d-flex">
             <div class="col-12 bg-light">
-                <h1>hola</h1>
             </div>
         </div>
     </main>
