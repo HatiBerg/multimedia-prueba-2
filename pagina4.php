@@ -95,7 +95,6 @@ $contEdad = mysqli_query($conexion, $consultaEdad);
             Tecnología Multimedia - CIF 6459 - Domingo 06/11/2022 - Esteban Ponce - Sebastian Torres
         </div>
     </footer>
-
     <script src="js/bootstrap.js"></script>
 </body>
 </html>
